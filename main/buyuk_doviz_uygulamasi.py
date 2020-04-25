@@ -68,10 +68,9 @@ keys2 = [
 'HMTSATIS', 'IKIALIS', 'IKISATIS', 'GRSALIS', 'GRSSATIS', 'BESALIS', 'BESSATIS', '14ALIS', '14SATIS', '18ALIS', '18SATIS', '22ALIS', '22SATIS', 'GMSALIS', 'GMSSATIS'  
 ]
 
-"""
+
 data = veri_cekme()
 values = data.link_ayir_kur()
 values2 = data.link_ayir()
 content = dict(zip(dict(zip(keys, keys2)), dict(zip(values, values2))))
 print(content)
-"""
