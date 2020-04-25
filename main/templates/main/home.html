@@ -1,0 +1,265 @@
+{% extends "main/base.html" %}
+{% block content %}
+<header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> Finance Database </b></h5>
+  </header>
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter">
+      <div class="w3-container w3-padding-16" style="color: aliceblue; background:#3e4444">
+        <div class="w3-left"><i class="fa fa-usd w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3 style='font-size:30px'>{{doviz.USDALIS}} / {{doviz.USDSATIS}}</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>(USD) Amerikan Doları</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-yellow w3-padding-16">
+        <div class="w3-left"><i class="fa fa-eur w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3 style='font-size:30px'>{{doviz.EURALIS}} / {{doviz.EURSATIS}}</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>(EUR) Euro </h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-dark-grey w3-padding-16">
+        <div class="w3-left"><i class="fas fa-pound-sign w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3 style='font-size:30px'>{{doviz.GBPALIS}} / {{doviz.GBPSATIS}}</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>(GBP) Britanya Poundu </h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-brown w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-ruble w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3 style='font-size:30px'>{{doviz.RUBALIS}} / {{doviz.RUBSATIS}}</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>(RUB) Rus Rublesi </h4>
+      </div>
+    </div>
+  </div>
+  <div class="w3-panel">
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-three">
+        <div class="w3-container">
+          <h5 style="position: relative; top: 5px;"><strong> Kurlar 
+            <strong style="position: relative; left: 700px;"> Alış</strong>
+            <strong style="position: relative; left: 920px;"> Satış</strong>
+            <strong style="position: relative; left: 1120px;"> Yüksek</strong>
+            <strong style="position: relative; left: 1310px;"> Düşük</strong></h5>
+
+          <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+            <tr>
+              <td>(USD) Amerikan Doları </td>
+              <td>{{doviz.USDALIS}}</td>
+              <td>{{doviz.USDSATIS}}</td>
+              <td>{{doviz.USDYUKSEK}}</td>
+              <td>{{doviz.USDDUSUK}}</td>
+            </tr>
+            <tr>
+              <td>(EUR) EURO </td>
+              <td>{{doviz.EURALIS}}</td>
+              <td>{{doviz.EURSATIS}}</td>
+              <td>{{doviz.EURYUKSEK}}</td>
+              <td>{{doviz.EURDUSUK}}</td>
+            </tr>
+            <tr>
+              <td>(GBP) Britanya Poundu</td>
+              <td>{{doviz.GBPALIS}}</td>
+              <td>{{doviz.GBPSATIS}}</td>
+              <td>{{doviz.GBPYUKSEK}}</td>
+              <td>{{doviz.GBPDUSUK}}</td>
+            </tr>
+            <tr>
+              <td>(SEK) Isveç Kronu</td>
+              <td>{{doviz.SEKALIS}}</td>
+              <td>{{doviz.SEKSATIS}}</td>
+              <td>{{doviz.SEKYUKSEK}}</td>
+              <td>{{doviz.SEKDUSUK}}</td>
+            </tr>
+            <tr>
+              <td>(NOK) Norveç Kronu</td>
+              <td>{{doviz.NOKALIS}}</td>
+              <td>{{doviz.NOKSATIS}}</td>
+              <td>{{doviz.NOKYUKSEK}}</td>
+              <td>{{doviz.NOKDUSUK}}</td>
+            </tr>
+            <tr>
+              <td>(RUB) Rus Rublesi</td>
+              <td>{{doviz.RUBALIS}}</td>
+              <td>{{doviz.RUBSATIS}}</td>
+              <td>{{doviz.RUBYUKSEK}}</td>
+              <td>{{doviz.RUBDUSUK}}</td>
+            </tr>
+          </table><br>
+          <button class="w3-button w3-dark-grey">Diğer Kurlar  <i class="fa fa-arrow-right"></i></button>
+        </div></div></div>   
+      </div></strong>
+        
+  <hr>
+
+    <div class="w3-panel">
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-three">
+          <div class="w3-container">
+            <h5 style="position: relative; top: 5px;"><strong> Altın 
+              <strong style="position: relative; left: 700px;"> Alış</strong>
+              <strong style="position: relative; left: 920px;"> Satış</strong></h5>
+           
+  
+            <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+              <tr>
+                <td>(ONS) ONS Altın</td>
+                <td>{{altin.ONSALIS}}</td>
+                <td>{{altin.ONSSATIS}}</td>
+              </tr>
+              <tr>
+                <td> Gram Altın</td>
+                <td>{{altin.GRMALIS}}</td>
+                <td>{{altin.GRMSATIS}}</td>
+              </tr>
+              <tr>
+                <td> Gümüş</td>
+                <td>{{altin.GMSALIS}}</td>
+                <td>{{altin.GMSSATIS}}</td>
+              </tr>
+              <tr>
+                <td> Çeyrek Altın</td>
+                <td>{{altin.CYRALIS}}</td>
+                <td>{{altin.CYRSATIS}}</td>
+              </tr>
+              <tr>
+                <td> 22 Ayar Bilezik</td>
+                <td>{{altin.22ALIS}}</td>
+                <td>{{altin.22SATIS}}</td>
+              </tr>
+              <tr>
+                <td> 14 Ayar Altın</td>
+                <td>{{altin.14ALIS}}</td>
+                <td>{{altin.14SATIS}}</td>
+              </tr>
+            </table><br>
+            <button class="w3-button w3-dark-grey">Diğer Kurlar  <i class="fa fa-arrow-right"></i></button></strong>
+          </div>   
+        </div>
+      </div>
+    </div> 
+  <hr>
+  <div class="w3-panel">
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-three">
+        <div class="w3-container">
+          <h5 style="position: relative; top: 5px;"><strong> Borsa - En Çok İşlem Görenler 
+            <strong style="position: relative; left: 700px;"> Alış</strong>
+            <strong style="position: relative; left: 920px;"> Satış</strong>
+            <strong style="position: relative; left: 1120px;"> Yüksek</strong>
+            <strong style="position: relative; left: 1310px;"> Düşük</strong></h5>
+
+          <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+            <tr>
+              <td>(USD) Amerikan Doları </td>
+              <td>{{doviz.USDALIS}}</td>
+              <td>{{doviz.USDSATIS}}</td>
+              <td>{{doviz.USDYUKSEK}}</td>
+              <td>{{doviz.USDDUSUK}}</td>
+            </tr>
+            <tr>
+              <td>(EUR) EURO </td>
+              <td>{{doviz.EURALIS}}</td>
+              <td>{{doviz.EURSATIS}}</td>
+              <td>{{doviz.EURYUKSEK}}</td>
+              <td>{{doviz.EURDUSUK}}</td>
+            </tr>
+            <tr>
+              <td>(GBP) Britanya Poundu</td>
+              <td>{{doviz.GBPALIS}}</td>
+              <td>{{doviz.GBPSATIS}}</td>
+              <td>{{doviz.GBPYUKSEK}}</td>
+              <td>{{doviz.GBPDUSUK}}</td>
+            </tr>
+            <tr>
+              <td>(SEK) Isveç Kronu</td>
+              <td>{{doviz.SEKALIS}}</td>
+              <td>{{doviz.SEKSATIS}}</td>
+              <td>{{doviz.SEKYUKSEK}}</td>
+              <td>{{doviz.SEKDUSUK}}</td>
+            </tr>
+            <tr>
+              <td>(NOK) Norveç Kronu</td>
+              <td>{{doviz.NOKALIS}}</td>
+              <td>{{doviz.NOKSATIS}}</td>
+              <td>{{doviz.NOKYUKSEK}}</td>
+              <td>{{doviz.NOKDUSUK}}</td>
+            </tr>
+            <tr>
+              <td>(RUB) Rus Rublesi</td>
+              <td>{{doviz.RUBALIS}}</td>
+              <td>{{doviz.RUBSATIS}}</td>
+              <td>{{doviz.RUBYUKSEK}}</td>
+              <td>{{doviz.RUBDUSUK}}</td>
+            </tr>
+          </table><br>
+          <button class="w3-button w3-dark-grey">Diğer Borsalar  <i class="fa fa-arrow-right"></i></button></strong>
+        </div>
+      </div>   
+      </div>
+    </div>
+  </div>   
+  <hr>
+
+  <div class="w3-container">
+    <h5>Recent Comments</h5>
+    <div class="w3-row">
+      <div class="w3-col m2 text-center">
+        <img class="w3-circle" src="#" style="width:96px;height:96px">
+      </div>
+      <div class="w3-col m10 w3-container">
+        <h4>John <span class="w3-opacity w3-medium">Sep 29, 2014, 9:12 PM</span></h4>
+        <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br>
+      </div>
+    </div>
+
+    <div class="w3-row">
+      <div class="w3-col m2 text-center">
+        <img class="w3-circle" src="#" style="width:96px;height:96px">
+      </div>
+      <div class="w3-col m10 w3-container">
+        <h4>Bo <span class="w3-opacity w3-medium">Sep 28, 2014, 10:15 PM</span></h4>
+        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br>
+      </div>   
+    </div>
+  </div>
+</div>
+  <br>
+  <div class="w3-container w3-dark-grey w3-padding-32">
+    <div class="w3-row">
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-green">Demographic</h5>
+        <p>Language</p>
+        <p>Country</p>
+        <p>City</p>
+      </div>
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-red">System</h5>
+        <p>Browser</p>
+        <p>OS</p>
+        <p>More</p>
+      </div>
+      <div class="w3-container w3-third">
+        <h5 class="w3-bottombar w3-border-orange">Target</h5>
+        <p>Users</p>
+        <p>Active</p>
+        <p>Geo</p>
+        <p>Interests</p>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+  

@@ -1,0 +1,26 @@
+{% extends "main/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="grid-container" style="padding-top: 10%; padding-bottom: 20%; display: grid; grid-template-columns: auto auto auto; ">
+    <div class="grid-item" style="grid-column-start: 2; grid-column-end: 3; grid-row-start: 2; grid-row-end: 3;">
+    <div class = 'content-section'>
+        <form method = 'POST'>
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Finance Database'e giriş yap</legend>
+                {{ form|crispy  }}
+            </fieldset> 
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Giriş yap</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                 <a href="{% url 'password_reset' %}" class="ml-2">Şifreni mi unuttun? </a> · <a href="{% url 'register'%}"> Hala bir hesabın yok mu? </a>
+            </small>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock content %}

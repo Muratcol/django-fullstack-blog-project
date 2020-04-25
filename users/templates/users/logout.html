@@ -1,0 +1,14 @@
+{% extends "main/base.html" %}
+{% block content %}
+<div class="grid-container" style="padding-top: 10%; padding-bottom: 35%; display: grid; grid-template-columns: auto auto auto; text-align: center;">
+    <div class="grid-item" style="grid-column-start: 2; grid-column-end: 3; grid-row-start: 3; grid-row-end: 4;">
+        <h5>Başarıyla çıkış yapıldı.</h5>     
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="{% url 'login' %}" class="ml-2">Tekrar giriş yap</a> veya <a href="{% url 'site-home' %}"> Anasayfaya dön</a>
+        </small>
+    </div>
+</div>
+</div>
+
+{% endblock content %}

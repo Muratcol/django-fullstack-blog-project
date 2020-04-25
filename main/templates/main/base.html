@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<title>Finance Database</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large w3-xlarge" style="z-index:4">
+  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="position: relative; top: 10px; font-family:'Garamond'" ">Piyasalar</a>
+  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="position: relative; top: 10px; font-family:'Garamond'" ">Döviz</a>
+  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="position: relative; top: 10px; font-family:'Garamond'" ">Borsa</a>
+  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="position: relative; top: 10px; font-family:'Garamond'" ">Altın</a>
+  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="position: relative; top: 10px; font-family:'Garamond'" ">Emtialar</a>
+  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="position: relative; top: 10px; font-family:'Garamond'" ">Kripto Paralar</a>
+  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="position: relative; top: 10px; font-family:'Garamond'" ">Pariteler</a>
+  <a href="{% url 'site-home' %}"><span class="w3-bar-item w3-right">
+  <img src="/media/logo/logo.jpg" alt="logo" width="170"></span></a>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style=" display: none; z-index:3;width:300px; padding-top: 10px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    {% if user.is_authenticated %}
+    <div class="w3-col s4">
+      <img src="{{user.profile.image.url}}" class="w3-circle w3-margin-right" style="width:70px">
+    </div>
+    <div class="w3-col s8 w3-bar">
+        <span>Welcome, <strong>{{user.username}}</strong></span><br>
+        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+        <a href="{% url 'Profile' %}" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
+        <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+      </div>
+    </div>
+    <hr>
+    <div class="w3-container">
+      <h5>Panel</h5>
+    </div>
+    <div class="w3-bar-block">
+      <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-padding w3-grey"><i class="fa fa-users fa-fw"></i>  AnaSayfa</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  İşlemlerim</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Birikimlerim</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Takip Ettiklerim</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  Haberler</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  Genel</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  Geçmiş İşlemlerim</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Ayarlar</a><br><br><br><br>
+      <a href="{% url 'logout' %}" class="w3-bar-item w3-button w3-padding"><i class="fa fa-plane fa-fw"></i>  Çıkış Yap</a>
+    </div>
+    {% else %}
+      <div class="w3-col s10 w3-bar">
+      <span><strong>Finance Database</strong>'e Hoşgeldin! </span><br><br>
+          <p>Giriş yapmak için <a href="{% url 'login' %}"><strong>tıkla!</strong></a></p>
+          <small>Hala üye değil misin? Şimdi aramıza <a href="{% url 'register' %}"><strong>katıl.</strong></a></small>
+        </div>
+        </div>
+      {% endif %}
+      
+  
+</nav>
+<div class="w3-main" style="margin-left:300px;margin-top:43px; padding-top: 20px;">
+{% block content %}{% endblock content %}
+
+  <!-- /.container 
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    <h4>FOOTER</h4>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  </footer>
+
+ End page content -->
+</div>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+
+</body>  
+<footer class="py-5 w3-black" style="height: 35px; text-align: center; bottom: auto;" >
+  <div class="container">
+    <p class="m-0 text-center text-white" style="position:relative; bottom: 16px;">Copyright &copy; Finance Database 2020 <img src="/media/logo/logo.jpg" alt="" width="150" style="position:relative; left:450px; bottom:10px;"></p>
+    
+  </div>
+
+</footer> 
+</html>
