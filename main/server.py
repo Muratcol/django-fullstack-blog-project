@@ -1,51 +1,7 @@
-import requests
-from bs4 import BeautifulSoup
-from datetime import datetime
-
-
-
-
-class veri_cekme(object):
-
-    def link_ayir(self):
-        url = "https://altin.doviz.com/"
-        request = requests.get(url)
-        cevap = request.content
-        soup = BeautifulSoup(cevap, "lxml")
-        self.db = []
-        kur = []
-        sayac = 0
-        self.parite = 0
-        for data1 in soup.find_all("td", {"style": "text-align:right;"}):
-            data1 = data1.text.replace(",", ".")
-            kur.append(data1)
-            sayac += 1
-            if sayac == 32:
-                return kur
- 
-        return kur
-
-
-    def link_ayir_kur(self):
-        url = "https://kur.doviz.com/"
-        request = requests.get(url)
-        cevap = request.content
-        soup = BeautifulSoup(cevap, "lxml")
-        self.db = []
-        kur = []
-        self.parite = 0
-        for data in soup.find_all("div", {"class": "kur-page kur-list"}):
-
-            for data1 in data.find_all("td", {"style": "text-align:right;"}):
-                data1 = data1.text.replace(",", ".")
-                kur.append(data1)
-        return kur
-
-
-    def time(self):
-        now = datetime.now()
-        now = now.strftime("%X")
-        return now
+import socket
+import pickle
+import time
+from .buyuk_doviz_uygulamasi import veri_cekme
 
 
 keys = [
@@ -72,6 +28,48 @@ keys2 = [
 'HMTSATIS', 'IKIALIS', 'IKISATIS', 'GRSALIS', 'GRSSATIS', 'BESALIS', 'BESSATIS', '14ALIS', '14SATIS', '18ALIS', '18SATIS', '22ALIS', '22SATIS', 'GMSALIS', 'GMSSATIS'  
 ]
 
+HEADERSIZE = 10
 
 
 
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind((socket.gethostname(), 1234))
+s.listen(5)
+data = veri_cekme()
+
+
+while True:
+    clientsocket, address = s.accept()
+    print(f"Connection from {address} has been established!")
+
+    
+    values = data.link_ayir_kur()
+    values2 = data.link_ayir()
+    doviz = dict(zip(keys, values))
+    altin = dict(zip(keys2, values2))
+    content = {
+        'doviz':doviz,
+        'altin':altin
+    }
+
+    msg = pickle.dumps(content)
+
+    msg = bytes(f'{len(msg):<{HEADERSIZE}}', "utf-8") + msg
+
+    clientsocket.send(msg)
+
+    while True:
+        values = data.link_ayir_kur()
+        values2 = data.link_ayir()
+        doviz = dict(zip(keys, values))
+        altin = dict(zip(keys2, values2))
+        content = {
+            'doviz':doviz,
+            'altin':altin
+        }
+        time.sleep(3)
+        msg = pickle.dumps(content)
+
+        msg = bytes(f'{len(msg):<{HEADERSIZE}}', "utf-8") + msg
+
+        clientsocket.send(msg)
