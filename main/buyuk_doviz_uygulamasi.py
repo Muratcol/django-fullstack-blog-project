@@ -69,8 +69,3 @@ keys2 = [
 ]
 
 
-data = veri_cekme()
-values = data.link_ayir_kur()
-values2 = data.link_ayir()
-content = dict(zip(dict(zip(keys, keys2)), dict(zip(values, values2))))
-print(content)
