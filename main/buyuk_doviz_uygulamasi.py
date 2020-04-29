@@ -1,10 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
-
-
-
-
 class veri_cekme(object):
 
     def link_ayir(self):
@@ -71,7 +67,5 @@ keys2 = [
 'ONSALIS', 'ONSSATIS', 'GRMALIS', 'GRMSATIS', 'CYRALIS', 'CYRSATIS', 'YRMALIS', 'YRMSATIS', 'TAMALIS', 'TAMSATIS', 'CMHALIS', 'CMHSATIS', 'ATAALIS', 'ATASATIS', 'RSTALIS', 'RSTSATIS', 'HMTALIS',
 'HMTSATIS', 'IKIALIS', 'IKISATIS', 'GRSALIS', 'GRSSATIS', 'BESALIS', 'BESSATIS', '14ALIS', '14SATIS', '18ALIS', '18SATIS', '22ALIS', '22SATIS', 'GMSALIS', 'GMSSATIS'  
 ]
-
-
 
 
