@@ -1,11 +1,13 @@
 {% extends "main/base.html" %}
 {% block content %}
 <header class="w3-container" style="padding-top:22px">
-    <h5><b><i class="fa fa-dashboard"></i> Finance Database </b></h5>
+    <h5>Finance Database</h5>
+                  <!-- Colorfull Currencies -->      
     <div class="w3-row-padding w3-margin-bottom">
-                              <!-- HEADER   -->
+      
+
       <div class="w3-quarter">
-        <div class="w3-container w3-padding-16" style="color: aliceblue; background:#3e4444">
+        <div class="w3-container w3-padding-16" style="color: aliceblue; background:#3e4444">        
           <div class="w3-left"><i class="fa fa-usd w3-xxxlarge"></i></div>
           <div class="w3-right">
             <h3 style='font-size:30px'>{{doviz.USDALIS}} / {{doviz.USDSATIS}}</h3>
@@ -14,6 +16,8 @@
           <h4>(USD) Amerikan Doları</h4>
         </div>
       </div>
+
+
       <div class="w3-quarter">
         <div class="w3-container w3-padding-16" style="background-color: #DCA62A;">
           <div class="w3-left"><i class="fa fa-eur w3-xxxlarge"></i></div>
@@ -24,8 +28,9 @@
           <h4>(EUR) Euro </h4>
         </div>
       </div>
+
       <div class="w3-quarter">
-        <div class="w3-container w3-dark-grey w3-padding-16">
+        <div class="w3-container w3-dark-grey w3-padding-16 shadow">
           <div class="w3-left"><i class="fas fa-pound-sign w3-xxxlarge"></i></div>
           <div class="w3-right">
             <h3 style='font-size:30px'>{{doviz.GBPALIS}} / {{doviz.GBPSATIS}}</h3>
@@ -35,7 +40,7 @@
         </div>
       </div>
       <div class="w3-quarter">
-        <div class="w3-container w3-brown w3-text-white w3-padding-16">
+        <div class="w3-container w3-brown w3-text-white w3-padding-16 shadow">
           <div class="w3-left"><i class="fa fa-ruble w3-xxxlarge"></i></div>
           <div class="w3-right">
             <h3 style='font-size:30px'>{{doviz.RUBALIS}} / {{doviz.RUBSATIS}}</h3>
@@ -48,7 +53,7 @@
   </header>
   
   <div class="w3-panel">
-    <div class="w3-row-padding" style="margin:0 -16px">
+    <div class="w3-row-padding shadow" style="margin:0 -16px">
       <div class="w3-half w3-container">
           <h5 style="position: relative; top: 5px;"><strong> Kurlar 
             <strong style="position: relative; left: 700px;"> Alış</strong>
@@ -100,7 +105,8 @@
               <td>{{doviz.RUBDUSUK}}</td>
             </tr>
           </table><br>
-          <button class="w3-button w3-dark-grey">Diğer Kurlar  <i class="fa fa-arrow-right"></i></button>
+          <button class="w3-button w3-dark-grey" style="margin-bottom: 20px;">Diğer Kurlar  <i class="fa fa-arrow-right"></i></button>
+
         </div><div class="w3-half w3-container">
           <h5 style="position: relative; top: 5px;"><strong> Kurlar 
             <strong style="position: relative; left: 700px;"> Alış</strong>
@@ -153,7 +159,7 @@
             </tr>
           </table><br>
           <button class="w3-button w3-dark-grey">Diğer Kurlar  <i class="fa fa-arrow-right"></i></button>
-        </div></div></div>   
+        </div> 
 </strong>
         
   <hr>

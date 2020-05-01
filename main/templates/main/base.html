@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap" rel="stylesheet">
 <style>
   html,body,h1,h2,h3,h4,h5 {font-family: "Source Sans Pro", sans-serif}
+
 </style>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -18,15 +19,16 @@
   
 <!-- Top container -->
 <div class="w3-bar w3-top w3-large w3-xlarge" style="z-index:4; background-color: #66645F;" id="navbar">
-  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="float: left; padding-left: 100px;">Piyasalar</a>
-  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="position: relative; top: 10px;">Döviz</a>
-  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="position: relative; top: 10px;">Borsa</a>
-  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="position: relative; top: 10px;">Altın</a>
-  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="position: relative; top: 10px;">Emtialar</a>
-  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="position: relative; top: 10px;">Kripto Paralar</a>
-  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="position: relative; top: 10px;">Pariteler</a>
-  <a href="{% url 'site-home' %}"><span class="w3-bar-item w3-right">
-  <img src="/media/logo/logo.jpg" alt="logo" width="170"></span></a>
+  <a href="{% url 'site-home' %}"><span class="w3-bar-item" style="padding-left: 320px;">
+    <img src="/media/logo/logo.jpg" alt="logo" width="170"></span></a>
+  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="float: left; padding: 15px 0px 0px 25px;">Piyasalar</a>
+  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="float: left; padding: 15px 0px 0px 25px">Döviz</a>
+  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="float: left; padding: 15px 0px 0px 25px">Borsa</a>
+  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="float: left; padding: 15px 0px 0px 25px">Altın</a>
+  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="float: left; padding: 15px 0px 0px 25px">Emtialar</a>
+  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="float: left; padding: 15px 0px 0px 25px">Kripto Paralar</a>
+  <a href="{% url 'site-home' %}" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-yellow w3-xlarge" style="float: left; padding: 15px 0px 0px 25px">Pariteler</a>
+  
 </div>
 
 <!-- Sidebar/menu -->
