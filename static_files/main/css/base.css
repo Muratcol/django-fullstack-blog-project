@@ -1,0 +1,32 @@
+#bootstrap-overrides ul a{
+    text-decoration: none;
+    color: inherit;
+    font-size: small;    
+}
+#bootstrap-overrides ul a:hover{
+    text-decoration: none;
+    color: #FBAC27;
+
+}
+#navbar {
+    background-color: #66645F;
+}
+#bootstrap-overrides #finance-bar a {
+    font-size: large;
+    font-weight: 700;
+    color: whitesmoke !important;
+    
+}
+#bootstrap-overrides #finance-bar a:hover{
+    border-bottom: solid 0.2rem #FBAC27;
+    line-height: 0.5rem;
+    
+}
+#logo img {
+    width: 25%;
+}
+#logo img:hover {
+    border-bottom: none;
+    text-decoration: none;
+}
+
