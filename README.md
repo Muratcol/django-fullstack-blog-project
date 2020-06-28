@@ -35,7 +35,7 @@ $ python manage.py collectstatic
 ```
 ### Email Configurations
 
-If you planning to use reset password feature of the project,
+If you're planning to use reset password feature of the project,
 
 Go to: `django-fullstack-blog-project/doviz_uygulamasi/settings.py/`
 
